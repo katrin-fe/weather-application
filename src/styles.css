@@ -78,3 +78,10 @@ li {
 .weather-description {
   text-transform: capitalize;
 }
+
+.open-code {
+  display: inline;
+  margin: 0 auto;
+  font-size: 10px;
+  padding-left: 30px;
+}
