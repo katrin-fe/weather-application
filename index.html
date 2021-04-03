@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>WeatherApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://kit.fontawesome.com/ded9c84b7e.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weather-app" id="weather-app">
+            <form class="search-engine" id="search-form">
+                <input type="text" placeholder=" Enter a city" class="enter-a-city" id="city-input" />
+                <input type="submit" value="Search" class="search-button" />
+                <input type="button" id="current-button" class="enter-a-city" value="Current City"></button>
+            </form>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="current-information">
+                        <ul>
+                            <li><span class="symbol-current"><i class="fas fa-cloud-sun"></i></span></li>
+                            <li><strong id="show-submitted-city"></strong></li>
+                            <li id="current-day-and-time"></li>
+                            <li id="weather-description" class="weather-description"></li>
+                            <li><span id="show-celsius" class="show-celsius"></span><span id="show-fahrenheit"></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </form>
+            <div class="forecast">
+                <div class="row">
+                    <div class="col-2">
+                        <ul>
+                            <li class="weekday-forecast">
+                                Sun
+                            </li>
+                            <li class="symbol-forecast">
+                                <i class="fas fa-sun"></i>
+                            </li>
+                            <li class="temperature-forecast">
+                                23°C <br />
+                                73°F
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul>
+                            <li class="weekday-forecast">
+                                Mon
+                            </li>
+                            <li class="symbol-forecast">
+                                <i class="fas fa-cloud-sun"></i>
+                            </li>
+                            <li class="temperature-forecast">
+                                21°C <br />
+                                70°F
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul>
+                            <li class="weekday-forecast">
+                                Tue
+                            </li>
+                            <li class="symbol-forecast">
+                                <i class="fas fa-cloud"></i>
+                            </li>
+                            <li class="temperature-forecast">
+                                22°C <br />
+                                72°F
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul>
+                            <li class="weekday-forecast">
+                                Wed
+                            </li>
+                            <li class="symbol-forecast">
+                                <i class="fas fa-sun"></i>
+                            </li>
+                            <li class="temperature-forecast">
+                                25°C <br />
+                                77°F
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-2">
+                        <ul>
+                            <li class="weekday-forecast">
+                                Thu
+                            </li>
+                            <li class="symbol-forecast">
+                                <i class="fas fa-cloud-sun"></i>
+                            </li>
+                            <li class="temperature-forecast">
+                                22°C <br />
+                                72°F
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="src/app.js"></script>
+</body>
+
+</html>

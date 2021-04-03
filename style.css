@@ -1,0 +1,80 @@
+form {
+  margin: 70px 0 70px 0;
+}
+
+h1 {
+  font-size: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+.weather-app {
+  border-radius: 10px;
+  padding: 30px;
+  margin: 20px auto;
+  min-width: 330px;
+  max-width: 450px;
+  background-color: transparent;
+  background-image: url("https://images.unsplash.com/photo-1528283648649-33347faa5d9e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjR8fHNreXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60");
+}
+
+.search-engine {
+  display: inline;
+  margin-left: 32px;
+  padding: 0px 0px 0px -10px;
+}
+.enter-a-city {
+  border: 1px solid;
+  border-radius: 3px;
+  background: white;
+  max-width: 150px;
+}
+
+.search-button {
+  border: 0.5px solid;
+  border-radius: 3px;
+  background: white;
+  padding: 0 auto;
+}
+
+.current-information {
+  font-size: 16px;
+  margin-top: 20px;
+  padding-left: -30px;
+  background: transparent;
+}
+
+.symbol-current {
+  font-size: 70px;
+}
+
+.show-celsius {
+  font-size: 30px;
+  margin-top: -2px;
+  margin-left: -2px;
+}
+
+.forecast {
+  text-align: center;
+  margin-top: 35px;
+}
+
+.weekday-forecast {
+  margin-bottom: 13px;
+}
+
+.symbol-forecast {
+  font-size: 25px;
+}
+
+.temperature-forecast {
+  line-height: -2px;
+  font-size: 10px;
+  margin-top: 13px;
+}
+
+.weather-description {
+  text-transform: capitalize;
+}
