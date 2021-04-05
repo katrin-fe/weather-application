@@ -15,11 +15,12 @@
 
 <body>
     <div class="container">
+        <div class="weather-app-wrapper">
         <div class="weather-app" id="weather-app">
             <form class="search-engine" id="search-form">
                 <input type="text" placeholder=" Enter a city" class="enter-a-city" id="city-input" />
                 <input type="submit" value="Search" class="search-button" />
-                <input type="button" id="current-button" class="enter-a-city" value="Current City"></button>
+                <input type="button" id="current-button" class="enter-a-city" value="Current"></input>
             </form>
 
             <div class="row">
@@ -112,11 +113,13 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            <footer class="open-code">
+                 <a href="https://github.com/katrin-fe/weather-application" target="_blank">Open-source code</a><span> by Katrin Fellner</span>
+            </footer>
         </div>
-     <footer class="open-code">
-        <a href="https://github.com/katrin-fe/weather-application" target="_blank">Open-source code</a><span> by Katrin Fellner</span>
-     </footer>
+      </div>
+   </div>
+
   <script src="src/app.js"></script>
 </body>
 
