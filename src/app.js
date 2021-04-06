@@ -22,6 +22,8 @@ let temperatureFahrenheit = document.querySelector("#show-fahrenheit").innerHTML
 let windSpeed = document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
 let humidity = document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
 let date = document.querySelector ("#current-day-and-time").innerHTML = formatDate(response.data.dt * 1000);
+let icon = document.querySelector("#symbol");
+icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function search (city) {
@@ -59,6 +61,6 @@ let currentCity = navigator.geolocation.getCurrentPosition(getCurrentCoordinates
 let citycurrentbutton = document.querySelector("#current-button");
 citycurrentbutton.addEventListener("click", getCoordinates);
 
-search("Sydney");
+search("Zürich");
 
 
