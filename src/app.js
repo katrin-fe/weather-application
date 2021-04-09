@@ -17,8 +17,8 @@ function showInformation(response) {
 console.log(response);
 let city = document.querySelector("#show-submitted-city").innerHTML = response.data.name;
 let description = document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
-let temperatureCelsius = document.querySelector("#show-celsius").innerHTML = `${Math.round(response.data.main.temp)}°C   `;
-let temperatureFahrenheit = document.querySelector("#show-fahrenheit").innerHTML = ` / ${Math.round((response.data.main.temp * 9) / 5 + 32)}°F`;
+let temperatureCelsius = document.querySelector("#show-celsius").innerHTML = `${Math.round(response.data.main.temp)}`;
+let temperatureFahrenheit = document.querySelector("#show-fahrenheit").innerHTML = `${Math.round((response.data.main.temp * 9) / 5 + 32)}°F`;
 let windSpeed = document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
 let humidity = document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
 let date = document.querySelector ("#current-day-and-time").innerHTML = formatDate(response.data.dt * 1000);
@@ -36,8 +36,8 @@ axios.get(apiUrlTemp).then(showInformation);
 
 function getApi(event) {
 event.preventDefault();
-let city = document.querySelector("#city-input").value
-search(city);
+let city = document.querySelector("#city-input");
+search(city.value);
 }
 
 let citysubmit = document.querySelector("form");

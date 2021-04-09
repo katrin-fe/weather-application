@@ -18,7 +18,7 @@
         <div class="weather-app-wrapper">
         <div class="weather-app" id="weather-app">
             <form class="search-engine" id="search-form">
-                <input type="text" placeholder=" Enter a city" class="enter-a-city" id="city-input" />
+                <input type="search" placeholder=" Enter a city" class="enter-a-city" id="city-input" autocomplete="off" />
                 <input type="submit" value="Search" class="search-button" />
                 <input type="button" id="current-button" class="enter-a-city" value="Current"></input>
             </form>
@@ -29,7 +29,7 @@
                         <ul>
                             <li><span src="" class="symbol-current"><img class="fas fa-cloud-sun" id="symbol"></img></span></li>
                             <li><strong id="show-submitted-city"></strong></li>
-                            <li><span id="show-celsius" class="show-celsius"></span><span id="show-fahrenheit"></span></li>
+                            <li><span id="show-celsius" class="show-celsius"></span><span><sup class="celsius-sign">°C  I  </sup></span><a href="#"><sup class="show-fahrenheit" id="show-fahrenheit"></sup></a></li>
                             <li id="weather-description" class="weather-description"></li>
                             <li>Humidity: <span id="humidity" class="weather-description"></span>%</li>
                             <li>Windspeed: <span id="wind-speed" class="weather-description"></span> mph</li>
