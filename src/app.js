@@ -13,18 +13,27 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`
 }
 
+function convertFahrenheit(event) {
+event.preventDefault();
+let fahrenheitElement = document.querySelector("#show-celsius")
+let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+fahrenheitElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
 function showInformation(response) {
 console.log(response);
 let city = document.querySelector("#show-submitted-city").innerHTML = response.data.name;
 let description = document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
 let temperatureCelsius = document.querySelector("#show-celsius").innerHTML = `${Math.round(response.data.main.temp)}`;
-let temperatureFahrenheit = document.querySelector("#show-fahrenheit").innerHTML = `${Math.round((response.data.main.temp * 9) / 5 + 32)}°F`;
 let windSpeed = document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
 let humidity = document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
 let date = document.querySelector ("#current-day-and-time").innerHTML = formatDate(response.data.dt * 1000);
 let icon = document.querySelector("#symbol");
 icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+let temperatureFahrenheit = document.querySelector("#show-fahrenheit");
+temperatureFahrenheit.addEventListener("click", convertFahrenheit);
 }
+
 
 function search (city) {
 let apiKey = "535882172e596e21783881f2d1759f05";
@@ -60,6 +69,8 @@ let currentCity = navigator.geolocation.getCurrentPosition(getCurrentCoordinates
 
 let citycurrentbutton = document.querySelector("#current-button");
 citycurrentbutton.addEventListener("click", getCoordinates);
+
+let celsiusTemperature = null;
 
 search("Zürich");
 
