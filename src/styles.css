@@ -41,13 +41,14 @@ li {
 
 .current-information {
   font-size: 16px;
-  margin-top: 20px;
+  margin-top: 10px;
   padding-left: -30px;
   background: transparent;
 }
 
 .symbol-current {
   font-size: 70px;
+  margin-left: -20px;
 }
 
 .show-celsius {
@@ -87,7 +88,29 @@ li {
   padding-bottom: 30px;
 }
 
-.units {
+.units a {
   font-weight: 500;
   font-size: 13px;
+  color: black;
+  text-decoration: none;
+}
+
+.active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.show-fahrenheit {
+  color: blue;
+}
+
+.show-fahrenheit:hover {
+  color: blue;
+  cursor: default;
+}
+
+.celsius-sign:hover {
+  color: blue;
+  cursor: default;
 }

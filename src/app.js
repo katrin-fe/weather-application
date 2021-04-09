@@ -16,15 +16,18 @@ return `${day} ${hours}:${minutes}`
 function convertFahrenheit(event) {
 event.preventDefault();
 let temperatureElement = document.querySelector("#show-celsius");
-//temperatureCel.classList.remove("active");
 let fahrenheitTemperature = (temperatureCelsius * 9) / 5 + 32;
 temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+temperatureCel.classList.add("active");
+temperatureFahrenheit.classList.remove("active");
 }
 
 function convertCelsius(event) {
 event.preventDefault();
 let temperatureElement = document.querySelector("#show-celsius");
 temperatureElement.innerHTML = Math.round(temperatureCelsius);
+temperatureCel.classList.add("active");
+temperatureFahrenheit.classList.remove("active");
 }
 
 function showInformation(response) {
@@ -37,13 +40,6 @@ let date = document.querySelector ("#current-day-and-time").innerHTML = formatDa
 let icon = document.querySelector("#symbol");
 icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
-
-let temperatureFahrenheit = document.querySelector("#show-fahrenheit");
-temperatureFahrenheit.addEventListener("click", convertFahrenheit);
-
-let temperatureCel = document.querySelector("#celsius-sign");
-temperatureCel.addEventListener("click", convertCelsius);
-
 
 function search (city) {
 let apiKey = "535882172e596e21783881f2d1759f05";
@@ -79,6 +75,12 @@ let currentCity = navigator.geolocation.getCurrentPosition(getCurrentCoordinates
 
 let citycurrentbutton = document.querySelector("#current-button");
 citycurrentbutton.addEventListener("click", getCoordinates);
+
+let temperatureFahrenheit = document.querySelector("#show-fahrenheit");
+temperatureFahrenheit.addEventListener("click", convertFahrenheit);
+
+let temperatureCel = document.querySelector("#celsius-sign");
+temperatureCel.addEventListener("click", convertCelsius);
 
 let temperatureCelsius = null;
 
