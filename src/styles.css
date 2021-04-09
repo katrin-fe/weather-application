@@ -87,12 +87,7 @@ li {
   padding-bottom: 30px;
 }
 
-.celsius-sign {
-  font-weight: 500;
-  font-size: 13px;
-}
-
-.show-fahrenheit {
+.units {
   font-weight: 500;
   font-size: 13px;
 }

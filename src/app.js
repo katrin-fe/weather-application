@@ -15,24 +15,34 @@ return `${day} ${hours}:${minutes}`
 
 function convertFahrenheit(event) {
 event.preventDefault();
-let fahrenheitElement = document.querySelector("#show-celsius")
-let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-fahrenheitElement.innerHTML = Math.round(fahrenheitTemperature);
+let temperatureElement = document.querySelector("#show-celsius");
+//temperatureCel.classList.remove("active");
+let fahrenheitTemperature = (temperatureCelsius * 9) / 5 + 32;
+temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function convertCelsius(event) {
+event.preventDefault();
+let temperatureElement = document.querySelector("#show-celsius");
+temperatureElement.innerHTML = Math.round(temperatureCelsius);
 }
 
 function showInformation(response) {
-console.log(response);
 let city = document.querySelector("#show-submitted-city").innerHTML = response.data.name;
 let description = document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
-let temperatureCelsius = document.querySelector("#show-celsius").innerHTML = `${Math.round(response.data.main.temp)}`;
+temperatureCelsius = document.querySelector("#show-celsius").innerHTML = `${Math.round(response.data.main.temp)}`;
 let windSpeed = document.querySelector("#wind-speed").innerHTML = Math.round(response.data.wind.speed);
 let humidity = document.querySelector("#humidity").innerHTML = Math.round(response.data.main.humidity);
 let date = document.querySelector ("#current-day-and-time").innerHTML = formatDate(response.data.dt * 1000);
 let icon = document.querySelector("#symbol");
 icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+}
+
 let temperatureFahrenheit = document.querySelector("#show-fahrenheit");
 temperatureFahrenheit.addEventListener("click", convertFahrenheit);
-}
+
+let temperatureCel = document.querySelector("#celsius-sign");
+temperatureCel.addEventListener("click", convertCelsius);
 
 
 function search (city) {
@@ -70,7 +80,7 @@ let currentCity = navigator.geolocation.getCurrentPosition(getCurrentCoordinates
 let citycurrentbutton = document.querySelector("#current-button");
 citycurrentbutton.addEventListener("click", getCoordinates);
 
-let celsiusTemperature = null;
+let temperatureCelsius = null;
 
 search("Zürich");
 
