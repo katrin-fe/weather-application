@@ -48,7 +48,7 @@ li {
 
 .symbol-current {
   font-size: 70px;
-  margin-left: -20px;
+  margin-left: -23px;
 }
 
 .show-celsius {
@@ -60,10 +60,12 @@ li {
 .forecast {
   text-align: center;
   margin-top: 35px;
+  margin-left: 23px;
 }
 
 .weekday-forecast {
   margin-bottom: 13px;
+  text-align: center;
 }
 
 .symbol-forecast {
@@ -81,11 +83,15 @@ li {
   text-transform: capitalize;
 }
 
+.temperature-forecast-min {
+  color: gray;
+}
+
 .open-code {
-  display: center;
   font-size: 10px;
   line-height: 0.2;
   padding-bottom: 30px;
+  margin-left: 32px;
 }
 
 .units a {
