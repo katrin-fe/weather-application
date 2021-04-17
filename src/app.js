@@ -13,7 +13,8 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`
 }
 
-function displayForecast() {
+function displayForecast(response) {
+console.log(response.data.daily);
 let forecastElement = document.querySelector("#forecast");
 
 let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
@@ -54,6 +55,14 @@ temperatureCel.classList.add("active");
 temperatureFahrenheit.classList.remove("active");
 }
 
+function getForecast(coordinates) {
+let apiKey = "535882172e596e21783881f2d1759f05";
+let unit = "metric";
+let apiUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${cooridnates.lon}&appid=${apiKey}`;
+
+axios.get(apiUrl).then(displayForecast);
+}
+
 function showInformation(response) {
 let city = document.querySelector("#show-submitted-city").innerHTML = response.data.name;
 let description = document.querySelector("#weather-description").innerHTML = response.data.weather[0].description;
@@ -63,6 +72,8 @@ let humidity = document.querySelector("#humidity").innerHTML = Math.round(respon
 let date = document.querySelector ("#current-day-and-time").innerHTML = formatDate(response.data.dt * 1000);
 let icon = document.querySelector("#symbol");
 icon.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+
+getForecast(response.data.coord);
 }
 
 function search (city) {
@@ -109,6 +120,5 @@ temperatureCel.addEventListener("click", convertCelsius);
 let temperatureCelsius = null;
 
 search("Zürich");
-displayForecast();
 
 
