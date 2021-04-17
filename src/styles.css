@@ -18,18 +18,19 @@ li {
   max-width: 450px;
   background-color: transparent;
   background-image: url("https://images.unsplash.com/photo-1528283648649-33347faa5d9e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NjR8fHNreXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60");
+  font-size: 14px;
 }
 
 .search-engine {
   display: inline;
   margin-left: 32px;
-  padding: 0px 0px 0px -10px;
 }
 .enter-a-city {
   border: 1px solid;
   border-radius: 3px;
   background: white;
-  max-width: 150px;
+  margin-right: 1px;
+  max-width: 135px;
 }
 
 .search-button {
@@ -37,13 +38,7 @@ li {
   border-radius: 3px;
   background: white;
   padding: 0 auto;
-}
-
-.current-information {
-  font-size: 16px;
-  margin-top: 10px;
-  padding-left: -30px;
-  background: transparent;
+  margin-right: 1px;
 }
 
 .symbol-current {
@@ -60,12 +55,11 @@ li {
 .forecast {
   text-align: center;
   margin-top: 35px;
-  margin-left: 23px;
+  margin-left: 27px;
 }
 
 .weekday-forecast {
   margin-bottom: 13px;
-  text-align: center;
 }
 
 .symbol-forecast {

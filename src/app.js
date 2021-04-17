@@ -13,6 +13,30 @@ let day = days[date.getDay()];
 return `${day} ${hours}:${minutes}`
 }
 
+function displayForecast() {
+let forecastElement = document.querySelector("#forecast");
+
+let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+
+let forecastHTML = `<div class="row">`;
+days.forEach(function (day) {
+forecastHTML = forecastHTML + 
+`
+        <div class="col-2">
+            <div class="weekday-forecast">${day}</div>
+            <div class="symbol-forecast"><img class="fas fa-sun"></img></div>
+            <div class="temperature-forecast">
+                <span class="temperature-forecast-max">23°</span>
+                <span class="temperature-forecast-min">15°</span>
+            </div>
+        </div>
+`;
+});
+
+forecastHTML = forecastHTML + `</div>`;
+forecastElement.innerHTML = forecastHTML;
+}
+
 function convertFahrenheit(event) {
 event.preventDefault();
 let temperatureElement = document.querySelector("#show-celsius");
@@ -85,5 +109,6 @@ temperatureCel.addEventListener("click", convertCelsius);
 let temperatureCelsius = null;
 
 search("Zürich");
+displayForecast();
 
 
